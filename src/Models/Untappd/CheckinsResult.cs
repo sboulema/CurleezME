@@ -2,5 +2,5 @@
 
 public class CheckinsResult
 {
-    public CheckinsList Checkins { get; set; }
+    public CheckinsList? Checkins { get; set; }
 }
