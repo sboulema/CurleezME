@@ -1,10 +1,11 @@
 @font-face {
     font-family: Blackout;
     src: url('../fonts/blackout.ttf');
-} 
+}
 
 .hero {
     background-image: url(../img/header.jpg);
+    background-size: 100% 100%;
 }
 
 .hero .title {
