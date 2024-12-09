@@ -10,6 +10,9 @@ env:
   version: '1.0.${{ github.run_number }}'
   tag: ${{ github.ref_name == 'main' && 'latest' || github.run_number }}
 
+permissions:
+  packages: write
+
 jobs:
   build:
     name: Build
