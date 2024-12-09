@@ -1,19 +1,5 @@
 version: 2
-updates:
-- package-ecosystem: nuget
-  directory: "/"
-  schedule:
-    interval: daily
-  assignees:
-    - "sboulema"
-
-- package-ecosystem: npm
-  directory: "/src"
-  schedule:
-    interval: daily
-  assignees:
-    - "sboulema"
-  
+updates: 
 - package-ecosystem: github-actions
   directory: "/"
   schedule:

@@ -25,8 +25,8 @@ public class UntappdRepository(
 
         var response = await client.GetFromJsonAsync<CheckinsResponse>(
             $"/v4/brewery/checkins/236502" +
-            $"?client_id={configuration["ClientId"]}" +
-            $"&client_secret={configuration["ClientSecret"]}");
+            $"?client_id={configuration["CLIENTID"]}" +
+            $"&client_secret={configuration["CLIENTSECRET"]}");
 
         return response?.Response?.Checkins?.Items ?? [];
     }
