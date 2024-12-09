@@ -1,0 +1,195 @@
+﻿@model CurleezME.Models.ViewModels.IndexViewModel
+
+<section class="hero is-fullheight-with-navbar">
+    <div class="hero-body is-align-self-center">
+        <div class="has-text-centered">
+            <p class="title has-text-white">Curleez & ME Brewery</p>
+            <hr class="mb-5" />
+            <p class="subtitle has-text-white">After numerous beer festivals, 1100 beers on Untappd, and talking about beer, it became time to start brewing our own!</p>
+            <a class="button is-rounded is-medium has-text-weight-semibold has-text-white is-uppercase mt-3" href="#about">Find out more</a>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="py-6">
+    <div class="container content has-text-centered is-max-tablet">
+        <h1 class="title has-text-white">About</h1>
+        <hr class="mb-5" />
+        <p>
+            After numerous beer festivals, 1100 beers on Untappd, and evenings of talking about beer, it became time to start brewing our own.
+            Starting with 'Torrent' an American pale ale with loads of Cascade hops. It was an immediate success. We became inspired!
+        </p>
+        <p>
+            Next we decided to brew something a little daring and set our minds to a Christmas stout full of Christmas herbs like fresh ginger,
+            cinnamon and allspice. A little insecure we stored the fermenter away. But on Christmas Eve 'Santa's tracker' made our desert!
+            It was better than we hoped. We got the hang of it! Time to play around with different hops and herbs, thus resulting in batch #3
+            honey sage ale, bittered by more cascade hops. Currently resting in the bottle, with less than a week to go.
+        </p>
+        <p>
+            What's cooking now in the fermenter might be the very best beer we created yet: a reddish amber ale, created with 2 different grains,
+            and 3 different very nice hops: Nelson Sauvin, Wakatu and last but not least Simcoe hops. A very secret pre tasting blew our minds.
+        </p>
+        <p>
+            If you ask me how you can distinguish a Curleez &amp; ME beer? It's that special voooomp sound when you open the swing top cap.
+            And of course the love that goes in the beer!
+        </p>
+
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-half">
+                <figure class="image is-square">
+                    <img src="img/logo.png"/>
+                </figure>
+            </div>
+            <div class="column"></div>
+        </div>
+    </div>
+</section>
+
+<section id="beers" class="py-6">
+    <div class="container has-text-centered is-max-desktop">
+        <h1 class="title">Beers</h1>
+        <hr class="mb-5" />
+        <table class="table" id="beers-table">
+            <thead>
+                <tr>
+                    <th>Label</th>
+                    <th>Name</th>
+                    <th>Style</th>
+                    <th>ABV%</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var beer in Model.Beers)
+                {
+                    <tr>
+                        <td>@beer.LabelUrl</td>
+                        <td><a href="https://untappd.com/b/@beer.Slug/@beer.Id">@beer.Name</a></td>
+                        <td>@beer.Style</td>
+                        <td>@beer.ABV</td>
+                        <td>@beer.CreatedDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section id="checkins" class="py-6">
+    <div class="container has-text-centered is-max-desktop">
+        <h1 class="title">Checkins</h1>
+        <hr class="mb-5" />
+        <div class="fixed-grid has-5-cols">
+            <div class="grid">
+                @foreach (var checkin in Model.Checkins)
+                {
+                    <div class="cell">
+                        @if (!string.IsNullOrEmpty(checkin.User?.AvatarURL))
+                        {
+                                <img src="@checkin.User.AvatarURL" width="24" />
+                        }
+                        @checkin.User?.FirstName @checkin.User?.LastName is drinking a @checkin.Beer?.Name@(string.IsNullOrEmpty(checkin.Venue?.Name) ? string.Empty : $" at {@checkin.Venue?.Name}")
+                        @if (!string.IsNullOrEmpty(checkin.Comment))
+                        {
+                                <br/>
+
+                            <i>@checkin.Comment</i>
+                        }
+                        <br/>Rating: @checkin.Rating/5
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="news" class="py-6">
+    <div class="container has-text-centered is-max-tablet">
+        <h1 class="title">Stay up to date</h1>
+        <hr class="mb-5" />
+        <nav class="level">
+          <div class="level-item has-text-centered">
+              <a href="https://untappd.com/CurleezME">
+                <div>
+                  <p class="heading mb-3">Check out all the beers we offer.</p>
+                  <i class="title fa-brands fa-untappd"></i>
+                  <p class="title">Untappd</p>
+                </div>
+              </a>
+          </div>
+          <div class="level-item has-text-centered">
+              <a href="https://www.facebook.com/CurleezME">
+                <div>
+                  <p class="heading mb-3">Follow us on brew days and other events.</p>
+                  <i class="title fa-brands fa-facebook"></i>
+                  <p class="title">Facebook</p>
+                </div>
+              </a>
+          </div>
+          <div class="level-item has-text-centered">
+              <a href="https://hops.curleezme.nl">
+                <div>
+                  <p class="heading mb-3">See our recipes and start brewing.</p>
+                  <i class="title fa-solid fa-spa"></i>
+                  <p class="title">Hops</p>
+                </div>
+              </a>
+          </div>
+        </nav>
+    </div>
+</section>
+
+<section id="contact" class="py-6">
+    <div class="container content has-text-centered is-max-tablet">
+        <h1 class="title">Let's Get In Touch!</h1>
+        <hr class="mb-5" />
+        <p>
+            Want more info? Want to present your own recipe? Request a custom brew? That's great!
+            Send us an email and we will get back to you as soon as possible!
+        </p>
+        <i class="title fa-solid fa-envelope"></i><br/>
+        <a href="mailto://brewery@CurleezME.nl">brewery@curleezme.nl</a>
+    </div>
+</section>
+
+@section scripts {
+    <script type="text/javascript">
+        var table = new Tabulator("#beers-table", {
+            layout:"fitColumns",
+            pagination: true,
+            paginationSize: 5, 
+            columns: [
+                {
+                    title: "Label",
+                    formatter: "image",
+                    headerSort: false
+                },
+                {
+                    title: "Name",
+                    formatter: "html",
+                    headerSort: false,
+                    widthGrow: 2
+                },
+                {
+                    title: "Style",
+                    headerSort: false,
+                    widthGrow: 2
+                },
+                {
+                    title: "ABV%",
+                    headerSort: false
+                },
+                {
+                    title: "Date",
+                    formatter: "datetime", 
+                    headerSort: false,
+                    formatterParams: {
+                        inputFormat:"EEE, dd MMM yyyy HH:mm:ss ZZZ",
+                        outputFormat:"yyyy-MM-dd",
+                    }
+                }
+            ]
+        });    
+    </script>
+}

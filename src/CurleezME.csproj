@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>bbb8ac93-b940-4d83-8c98-5fa518920eae</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="HTTP\" />
+  </ItemGroup>
+
+</Project>

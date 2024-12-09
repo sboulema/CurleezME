@@ -1,0 +1,11 @@
+@breweryId=236502
+@beerId=2262309
+
+### Brewery info
+GET https://api.untappd.com/v4/brewery/info/{{breweryId}}?client_id={{ClientId}}&client_secret={{ClientSecret}}
+
+### Brewery Activity Feed
+GET https://api.untappd.com/v4/brewery/checkins/{{breweryId}}?client_id={{ClientId}}&client_secret={{ClientSecret}}
+
+### Beer info
+GET https://api.untappd.com/v4/beer/info/{{beerId}}?client_id={{ClientId}}&client_secret={{ClientSecret}}

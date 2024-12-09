@@ -1,0 +1,12 @@
+/.vs
+/.vscode
+/artifacts
+/src/*.user
+/src/.vs
+/src/data
+/src/bin
+/src/obj
+/src/appsettings.development.json
+/src/node_modules
+/src/wwwroot/js
+/src/wwwroot/css
