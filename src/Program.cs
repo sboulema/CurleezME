@@ -3,17 +3,19 @@ using CurleezME.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllersWithViews();
+builder.Services
+	.AddControllersWithViews();
 
 builder.Services
-    .AddScoped<IBeerService, BeerService>()
-    .AddScoped<IUntappdRepository, UntappdRepository>();
+	.AddScoped<IBeerService, BeerService>()
+	.AddScoped<IUntappdRepository, UntappdRepository>();
 
 builder.Services
-    .AddHttpClient("Untappd", httpClient =>
-    {
-        httpClient.BaseAddress = new Uri("https://api.untappd.com");
-    });
+	.AddHttpClient("Untappd", httpClient =>
+	{
+		httpClient.BaseAddress = new Uri("https://api.untappd.com");
+	})
+	.RemoveAllLoggers();
 
 var app = builder.Build();
 
