@@ -4,8 +4,8 @@
 }
 
 .hero {
-    background-image: url(../img/header.jpg);
-    background-size: 100% 100%;
+    background-image: url('../img/header.jpg');
+    background-size: cover;
 }
 
 .hero .title {
@@ -16,6 +16,17 @@
 
 .hero .button {
     background-color: #642E6C;
+}
+
+/* Mobile Hero */
+@media screen and (max-width: 1024px) {
+    .hero .title {
+        font-size: 2.7rem;
+    }
+
+    .hero .title span {
+        display: block;
+    }
 }
 
 .navbar-brand a {

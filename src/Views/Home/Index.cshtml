@@ -3,7 +3,7 @@
 <section class="hero is-fullheight-with-navbar">
     <div class="hero-body is-align-self-center">
         <div class="has-text-centered">
-            <p class="title has-text-white">Curleez & ME Brewery</p>
+            <p class="title has-text-white"><span>Curleez &amp; ME</span> Brewery</p>
             <hr class="mb-5" />
             <p class="subtitle has-text-white">After numerous beer festivals, 1100 beers on Untappd, and talking about beer, it became time to start brewing our own!</p>
             <a class="button is-rounded is-medium has-text-weight-semibold has-text-white is-uppercase mt-3" href="#about">Find out more</a>
@@ -13,36 +13,38 @@
 
 <section id="about" class="py-6">
     <div class="container content has-text-centered is-max-tablet">
-        <h1 class="title has-text-white">About</h1>
-        <hr class="mb-5" />
-        <p>
-            After numerous beer festivals, 1100 beers on Untappd, and evenings of talking about beer, it became time to start brewing our own.
-            Starting with 'Torrent' an American pale ale with loads of Cascade hops. It was an immediate success. We became inspired!
-        </p>
-        <p>
-            Next we decided to brew something a little daring and set our minds to a Christmas stout full of Christmas herbs like fresh ginger,
-            cinnamon and allspice. A little insecure we stored the fermenter away. But on Christmas Eve 'Santa's tracker' made our desert!
-            It was better than we hoped. We got the hang of it! Time to play around with different hops and herbs, thus resulting in batch #3
-            honey sage ale, bittered by more cascade hops. Currently resting in the bottle, with less than a week to go.
-        </p>
-        <p>
-            What's cooking now in the fermenter might be the very best beer we created yet: a reddish amber ale, created with 2 different grains,
-            and 3 different very nice hops: Nelson Sauvin, Wakatu and last but not least Simcoe hops. A very secret pre tasting blew our minds.
-        </p>
-        <p>
-            If you ask me how you can distinguish a Curleez &amp; ME beer? It's that special voooomp sound when you open the swing top cap.
-            And of course the love that goes in the beer!
-        </p>
+        <section class="section">
+            <h1 class="title has-text-white">About</h1>
+            <hr class="mb-5" />
+            <p>
+                After numerous beer festivals, 1100 beers on Untappd, and evenings of talking about beer, it became time to start brewing our own.
+                Starting with 'Torrent' an American pale ale with loads of Cascade hops. It was an immediate success. We became inspired!
+            </p>
+            <p>
+                Next we decided to brew something a little daring and set our minds to a Christmas stout full of Christmas herbs like fresh ginger,
+                cinnamon and allspice. A little insecure we stored the fermenter away. But on Christmas Eve 'Santa's tracker' made our desert!
+                It was better than we hoped. We got the hang of it! Time to play around with different hops and herbs, thus resulting in batch #3
+                honey sage ale, bittered by more cascade hops. Currently resting in the bottle, with less than a week to go.
+            </p>
+            <p>
+                What's cooking now in the fermenter might be the very best beer we created yet: a reddish amber ale, created with 2 different grains,
+                and 3 different very nice hops: Nelson Sauvin, Wakatu and last but not least Simcoe hops. A very secret pre tasting blew our minds.
+            </p>
+            <p>
+                If you ask me how you can distinguish a Curleez &amp; ME beer? It's that special voooomp sound when you open the swing top cap.
+                And of course the love that goes in the beer!
+            </p>
 
-        <div class="columns">
-            <div class="column"></div>
-            <div class="column is-half">
-                <figure class="image is-square">
-                    <img src="img/logo.png"/>
-                </figure>
+            <div class="columns">
+                <div class="column"></div>
+                <div class="column is-half">
+                    <figure class="image is-square">
+                        <img src="img/logo.png"/>
+                    </figure>
+                </div>
+                <div class="column"></div>
             </div>
-            <div class="column"></div>
-        </div>
+        </section>
     </div>
 </section>
 
@@ -142,14 +144,16 @@
 
 <section id="contact" class="py-6">
     <div class="container content has-text-centered is-max-tablet">
-        <h1 class="title">Let's Get In Touch!</h1>
-        <hr class="mb-5" />
-        <p>
-            Want more info? Want to present your own recipe? Request a custom brew? That's great!
-            Send us an email and we will get back to you as soon as possible!
-        </p>
-        <i class="title fa-solid fa-envelope"></i><br/>
-        <a href="mailto://brewery@CurleezME.nl">brewery@curleezme.nl</a>
+        <section class="section">
+            <h1 class="title">Let's Get In Touch!</h1>
+            <hr class="mb-5" />
+            <p>
+                Want more info? Want to present your own recipe? Request a custom brew? That's great!
+                Send us an email and we will get back to you as soon as possible!
+            </p>
+            <i class="title fa-solid fa-envelope"></i><br/>
+            <a href="mailto://brewery@CurleezME.nl">brewery@curleezme.nl</a>
+        </section>
     </div>
 </section>
 
@@ -157,6 +161,7 @@
     <script type="text/javascript">
         var table = new Tabulator("#beers-table", {
             layout:"fitColumns",
+            responsiveLayout: "hide",
             pagination: true,
             paginationSize: 5,
             height: "100%",
@@ -164,33 +169,41 @@
                 {
                     title: "Label",
                     formatter: "image",
-                    headerSort: false
+                    headerSort: false,
+                    responsive: 0
                 },
                 {
                     title: "Name",
                     formatter: "html",
                     headerSort: false,
-                    widthGrow: 2
+                    widthGrow: 2,
+                    responsive: 0
                 },
                 {
                     title: "Style",
                     headerSort: false,
-                    widthGrow: 2
+                    widthGrow: 2,
+                    responsive: 1,
+                    minWidth: 100
                 },
                 {
                     title: "ABV%",
-                    headerSort: false
+                    headerSort: false,
+                    responsive: 3,
+                    minWidth: 100
                 },
                 {
                     title: "Date",
-                    formatter: "datetime", 
+                    formatter: "datetime",
                     headerSort: false,
+                    responsive: 2,
+                    minWidth: 100,
                     formatterParams: {
                         inputFormat:"EEE, dd MMM yyyy HH:mm:ss ZZZ",
                         outputFormat:"yyyy-MM-dd",
                     }
                 }
             ]
-        });    
+        });
     </script>
 }
