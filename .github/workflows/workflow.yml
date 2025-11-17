@@ -40,8 +40,8 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/curleezme:${{ env.tag }}
-            ghcr.io/${{ github.actor }}/curleezme:${{ env.tag }} 
-            
+            ghcr.io/${{ github.actor }}/curleezme:${{ env.tag }}
+
   deploy:
     if: github.ref_name == 'main'
     name: Deploy
